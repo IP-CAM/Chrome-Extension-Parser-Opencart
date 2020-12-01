@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Parser-manager",
+    "description": "This extension parsing yandex.market",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "storage",		
+		"tabs" 
+    ],
+	"background": {
+        "scripts": ["js/background.js"]
+    }, 
+   
+	"web_accessible_resources": ["/images/download_folder.svg"],
+    "options_page": "options.html",
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+			"matches": [
+                "https://market.yandex.ru/*",
+                "https://market.yandex.by/*"				
+				                
+            ],
+            "js": [
+                
+				"js/jquery-3.5.1.min.js",
+				"parser.js"
+            ],
+			"css": [
+				"css/parser_style.css"
+			]
+
+        }
+    ]
+}
