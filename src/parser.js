@@ -199,8 +199,8 @@ function getSpec(hr, data = '') {
             });
             let items = {};
             items.attributes = attributeGroupe;
-            attributes.attributes = items.attributes;
-            product.attributes = items.attributes;
+            product.attributes = attributes.attributes = items.attributes;
+            
         }
     });
 }
